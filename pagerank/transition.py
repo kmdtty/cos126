@@ -47,44 +47,32 @@ import sys
 2. leap = 0.1/n
 3. transition = link + leap
 """
-#a = np.zeros((n, n))
 
-def link_probability():
-  pass
-
-
-def make_graph_matrix(filename):
+def transition(filename):
   with open(filename, 'r') as g:
     link_counter = Counter()
     page_counter = Counter()
-    leap_matrix = None
-    link_matrix = None
-    n = None
-    for i, line in enumerate(g):
-      if i == 0:
-        n = int(line.strip())
-        leap_matrix = np.full((n, n), 0.1/n)
-        link_matrix = np.zeros((n, n))
-        continue
-      data_line = line.strip()
-      if not data_line:
-        break
-      pair_list = data_line.split('  ')
+    # Head-Tail pattern
+    g_iter = iter(g)
+    n = int(next(g_iter, 0))
+    transition_matrix = np.zeros((n, n))
+    for line in (l.strip() for l in g_iter if l.strip()):
+      pair_list = line.split('  ')
       for pair in pair_list:
-        source, destination = pair.split(' ')
-        page_counter.update([(int(source), int(destination))])
-        link_counter.update([int(source)])
+        source, destination = [int(p) for p in pair.split(' ')]
+        page_counter.update([(source, destination)])
+        link_counter.update([source])
     for s, d in page_counter.elements():
-      link_matrix[s][d] = (0.9 / link_counter[s]) * page_counter[(s, d)]
-    print(leap_matrix + link_matrix)
+      transition_matrix[s][d] = (.9 / link_counter[s]) * page_counter[(s, d)] + .1/n
+    return transition_matrix
 
-def transition():
+def main():
   if len(sys.argv) > 1:
     filename = sys.argv[1]
   else:
     print('USAGE:\n python transition.py <graph_data_file>')
     exit(-1)
-  g_matrix = make_graph_matrix(filename)
+  print(transition(filename))
 
 if __name__ == "__main__":
   transition()
