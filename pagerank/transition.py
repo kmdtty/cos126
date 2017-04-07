@@ -43,7 +43,7 @@ from collections import Counter
 import sys
 
 """
-1. link = 0.9/#number of links
+1. link = (0.9/number of links in the page) * number of links to the page
 2. leap = 0.1/n
 3. transition = link + leap
 """
@@ -55,7 +55,8 @@ def link_probability():
 
 def make_graph_matrix(filename):
   with open(filename, 'r') as g:
-    counter = Counter()
+    link_counter = Counter()
+    page_counter = Counter()
     leap_matrix = None
     link_matrix = None
     n = None
@@ -69,15 +70,13 @@ def make_graph_matrix(filename):
       if not data_line:
         break
       pair_list = data_line.split('  ')
-      link_dict = defaultdict(int)
       for pair in pair_list:
         source, destination = pair.split(' ')
-        counter.update([(int(source), int(destination))])
-    # FIXME: link probability calculation is wrong
-    print(counter)
-    for s, d in counter.elements():
-      link_matrix[s][d] = 0.9 / counter[(s, d)]
-    print(link_matrix)
+        page_counter.update([(int(source), int(destination))])
+        link_counter.update([int(source)])
+    for s, d in page_counter.elements():
+      link_matrix[s][d] = (0.9 / link_counter[s]) * page_counter[(s, d)]
+    print(leap_matrix + link_matrix)
 
 def transition():
   if len(sys.argv) > 1:
