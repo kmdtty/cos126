@@ -1,4 +1,16 @@
 """
+Transition matrix
+
+= Def.
+Transition matrix is a n square matrix which represents the probability of
+the transition from a state i to a state j in a finite marcov chain.
+
+= Assumtion of this transition:
+- 90% of users click a link inside the current page
+  with the uniform distribution
+- 10% of users drectory move to a page inside the web with
+  the uniform distribution
+
 Input
 -----
 
@@ -11,29 +23,13 @@ f_i t_i_j .. f_i t_i_n
 ..
 f_n t_n_j .. f_n t_n_n
 
-where f_i and t_i are integers between [0, n)
+where f_i and t_i_j are integers between [0, n)
 
 = Semantics
 
 f_i is the from pages
-t_i_j is the to pages lined from the page f_i
-n is the number of from and to pair
-
-Output
-------
-
-Transition matrix
-
-= Def.
-Transition matrix is a n square matrix which represents the probability of
-the transition from a state i to a state j in a finite marcov chain.
-
-
-= Assumtion of this transition:
-- 90% of users click a link inside the current page
-  with the uniform distribution
-- 10% of users drectory move to a page inside the web with
-  the uniform distribution
+t_i_j is the to pages linked from the page f_i
+n is the number of pages
 
 """
 
@@ -42,13 +38,12 @@ from collections import defaultdict
 from collections import Counter
 import sys
 
-"""
-1. link = (0.9/number of links in the page) * number of links to the page
-2. leap = 0.1/n
-3. transition = link + leap
-"""
-
 def transition(filename):
+  """
+    1. link = (.9/number of links in the page) * number of links to the page
+    2. leap = .1/n
+    3. transition_matrix = link + leap
+  """
   with open(filename, 'r') as g:
     link_counter = Counter()
     page_counter = Counter()
@@ -75,4 +70,4 @@ def main():
   print(transition(filename))
 
 if __name__ == "__main__":
-  transition()
+  main()
