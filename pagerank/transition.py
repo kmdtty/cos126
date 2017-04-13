@@ -50,7 +50,7 @@ def transition(filename):
     # Head-Tail pattern
     g_iter = iter(g)
     n = int(next(g_iter, 0))
-    transition_matrix = np.zeros((n, n))
+    transition_matrix = np.full((n, n), .1/n)
     for line in (l.strip() for l in g_iter if l.strip()):
       pair_list = line.split('  ')
       for pair in pair_list:
@@ -58,7 +58,7 @@ def transition(filename):
         page_counter.update([(source, destination)])
         link_counter.update([source])
     for s, d in page_counter.elements():
-      transition_matrix[s][d] = (.9 / link_counter[s]) * page_counter[(s, d)] + .1/n
+      transition_matrix[s][d] = (.9 / link_counter[s]) * page_counter[(s, d)]
     return transition_matrix
 
 def main():
