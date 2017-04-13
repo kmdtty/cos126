@@ -12,14 +12,17 @@ from transition import transition
 import numpy as np
 import sys
 
+K = 100
+
 def pagerank(filename):
   transition_matrix = transition(filename)
   n = transition_matrix.shape[0]
   v = np.zeros((1, n))
   v[0,0] = 1.0
-  m = v.dot(transition_matrix)
-  print(transition_matrix)
-  print(m)
+  vm = v.dot(transition_matrix)
+  for _ in range(K-1):
+    vm = vm.dot(transition_matrix)
+  print(vm)
 
 if __name__ == "__main__":
   if len(sys.argv) > 1:

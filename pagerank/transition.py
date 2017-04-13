@@ -58,7 +58,7 @@ def transition(filename):
         page_counter.update([(source, destination)])
         link_counter.update([source])
     for s, d in page_counter.elements():
-      transition_matrix[s][d] = (.9 / link_counter[s]) * page_counter[(s, d)]
+      transition_matrix[s][d] = (.9 / link_counter[s]) * page_counter[(s, d)] + .1/n 
     return transition_matrix
 
 def main():
