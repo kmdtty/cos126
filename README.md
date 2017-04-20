@@ -1,6 +1,14 @@
 # Computer Science: An Interdisciplinary Approach
 
-Note and practice about princeton COS126 [1] and the text book [2].
+Programming practice for princeton COS126 [1] and the text book [2] by python.
+
+Programs:
+
+- pagerank
+- sat-solver
+
+Reference:
+----------
 
 [1] COS126
 http://www.princeton.edu/~cos126/
