@@ -5,7 +5,7 @@ SAT Solver
 m denote the number of clauses
 n denote the number of variables
 
-in_subset of length m which specifies the subset of
+bit_vector of length m which specifies the subset of
 variables that are assigned the value true.
 
 n-charaters string, ith character in the string corresponds
@@ -27,39 +27,46 @@ x'+y' = true
 import numpy as np
 import sys
 
-def check(clauses, in_subset):
+def check(clauses, bit_vector):
   """
-   Check function identifies any assignments which satisfies
-   all of the equations.
+   Check the candidate solution which is expressed as bit vector.
    This function takes linear time in the problem size.
   """
-  is_product = True
-  for x in clauses:
-    is_sum = False
-    for j, y in enumerate(in_subset):
-      if x[j] == '+':
-        is_sum = is_sum or y
-      if x[j] == '-':
-        is_sum = is_sum or not y
-    is_product = is_product and is_sum
-  return is_product
+  sat_all_clause = True
+  for clause in clauses:
+    is_sat_a_clause = False
+    for j, literal in enumerate(bit_vector):
+      if clause[j] == '+':
+        is_sat_a_clause = is_sat_a_clause or literal
+      if clause[j] == '-':
+        is_sat_a_clause = is_sat_a_clause or not literal
+    sat_all_clause = sat_all_clause and is_sat_a_clause
+  return sat_all_clause
 
 def sat(clauses):
   n = len(clauses)
-  in_subset = np.full((n, 1), 0)
-  while has_item(n, in_subset):
-    if check(clauses, in_subset):
-      return (True, in_subset.transpose())
+  bit_vector = np.full((n, 1), 0)
+  while next_count(n, bit_vector):
+    if check(clauses, bit_vector):
+      return (True, bit_vector.transpose())
   return (False, [])
 
-def has_item(n, in_subset):
+def next_count(n, bit_vector):
+  """
+   Count up the bit bector.
+
+   Example:
+   0 0 0 0
+   0 0 0 1
+   0 0 1 0
+  """
   i = n - 1
-  while(in_subset[i]):
+  while(bit_vector[i]):
     i -= 1
-    in_subset[i] = 0;
+    bit_vector[i] = 0;
     if i == -1:
       return False
-  in_subset[i] = 1
+  bit_vector[i] = 1
   return True
 
 if __name__ == "__main__":
