@@ -1,17 +1,20 @@
-# Computer Science: An Interdisciplinary Approach
+# Understanding Computer Science by Python Programming
 
-Programming practice for princeton COS126 [1] and the text book [2] by python.
+Give examples in Python for the essential ideas in computer science.
 
 Programs:
 
-- pagerank
-- sat-solver
+- pagerank [1][2]
+- sat-solver [2]
 
-Reference:
-----------
+References:
+-----------
 
 [1] COS126
 http://www.princeton.edu/~cos126/
 
 [2] R.Sedgewick and K.Wayne, Computer Science: An Interdisciplinary
 Approach, Addison-Wesley Professional, 2016.
+
+[3] Klein, Philip N. Coding the matrix: Linear algebra through computer science
+applications. Newtonian Press, 2013.
