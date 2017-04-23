@@ -4,8 +4,9 @@ Give examples in Python for the essential ideas in computer science.
 
 Programs:
 
-- pagerank [1][2]
-- sat-solver [2]
+- pagerank [2][3]
+- sat-solver [1][2]
+- sqrt [1][2]
 
 References:
 -----------
