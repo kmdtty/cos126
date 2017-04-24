@@ -7,6 +7,7 @@ Programs:
 - pagerank [2][3]
 - sat-solver [1][2]
 - sqrt [1][2]
+- gambler's ruin [2]
 
 References:
 -----------
