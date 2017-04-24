@@ -1,7 +1,11 @@
 """
 SQRT
 
-Calculate the square root as an example of newton method.
+Calculate the square root as an example of the iterative method.
+
+Reference:
+  http://mathworld.wolfram.com/NewtonsIteration.html
+  https://en.wikipedia.org/wiki/Iterative_method
 """
 import sys
 
