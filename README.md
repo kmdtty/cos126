@@ -1,13 +1,19 @@
 # Understanding Computer Science by Python Programming
 
-Give examples for computer science ideas, theorems in Python.
+Give examples for computer science ideas in Python.
 
-Programs:
+Computer Sceince Ideas and Programs:
+------------------------------------
 
-- pagerank [2][3]
-- sat-solver [1][2]
+Numerical Computation
 - sqrt [1][2]
+
+Probability and Computation
 - gambler's ruin [2]
+- pagerank [2][3]
+
+Computer Complexity
+- sat-solver [1][2]
 
 References:
 -----------
