@@ -1,6 +1,6 @@
 # Understanding Computer Science by Python Programming
 
-Give examples in Python for the essential ideas in computer science.
+Give examples for computer science ideas, theorems in Python.
 
 Programs:
 
