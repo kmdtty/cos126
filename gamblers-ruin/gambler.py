@@ -1,6 +1,9 @@
 """
 Gambler's ruin
 
+Reference:
+http://mathworld.wolfram.com/GamblersRuin.html
+
 """
 import sys
 import  random
