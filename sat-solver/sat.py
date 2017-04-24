@@ -2,27 +2,39 @@
 SAT Solver
 ==========
 
-m denote the number of clauses
-n denote the number of variables
+Satisfiability Problem solver as an example of Satisfiability Theory
 
-bit_vector of length m which specifies the subset of
-variables that are assigned the value true.
 
-n-charaters string, ith character in the string corresponds
-to the i th variable, '+' represents true, '-' represents false,
+Input
+-----
+
+Inputs are given by the sequence of n-charaters string,
+whose i-th character corresponds to the i-th variable.
+'+' means true, '-' means false,
 '.' means the variable does not appear.
 
 Example:
 
+(Boolean Constrains)
 x'+z = true
 x+y'+z = true
 x+y = true
 x'+y' = true
 
+(Inputs)
 -.+
 +-+
 ++.
 --.
+
+Output
+------
+
+Output is a bit_vector of length m, where m is the numbers of constrians.
+The bit_vector specifies the subset of variables that are assigned the value
+true.
+
+
 """
 import numpy as np
 import sys
