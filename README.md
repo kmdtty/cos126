@@ -11,6 +11,7 @@ Numerical Computation
 Probability and Computation
 - gambler's ruin [2]
 - pagerank [2][3]
+- sampling [1][2]
 
 Computer Complexity
 - sat-solver [1][2]
