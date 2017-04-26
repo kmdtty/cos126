@@ -6,24 +6,22 @@ Computer Sceince Ideas and Programs:
 ------------------------------------
 
 Numerical Computation
-- sqrt [1][2]
+- sqrt [1]
 
 Probability and Computation
-- gambler's ruin [2]
-- pagerank [2][3]
-- sampling [1][2]
+- gambler's ruin [1]
+- pagerank [1][2]
+- sampling [1]
+- coupon collector [1]
 
 Computer Complexity
-- sat-solver [1][2]
+- sat-solver [1]
 
 References:
 -----------
 
-[1] COS126
-http://www.princeton.edu/~cos126/
-
-[2] R.Sedgewick and K.Wayne, Computer Science: An Interdisciplinary
+[1] R.Sedgewick and K.Wayne, Computer Science: An Interdisciplinary
 Approach, Addison-Wesley Professional, 2016.
 
-[3] Klein, Philip N. Coding the matrix: Linear algebra through computer science
+[2] Klein, Philip N. Coding the matrix: Linear algebra through computer science
 applications. Newtonian Press, 2013.
