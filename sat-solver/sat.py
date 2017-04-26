@@ -36,7 +36,6 @@ true.
 
 
 """
-import numpy as np
 import sys
 
 def check(clauses, bit_vector):
@@ -57,10 +56,10 @@ def check(clauses, bit_vector):
 
 def sat(clauses):
   n = len(clauses)
-  bit_vector = np.full((n, 1), 0)
+  bit_vector = [0] * n
   while next_count(n, bit_vector):
     if check(clauses, bit_vector):
-      return (True, bit_vector.transpose())
+      return (True, bit_vector)
   return (False, [])
 
 def next_count(n, bit_vector):
