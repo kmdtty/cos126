@@ -23,4 +23,5 @@ if __name__ == '__main__':
     exit(-1)
   m = int(sys.argv[1])
   n = int(sys.argv[2])
-  print(sample(m, n))
+  # print(sample(m, n))
+  print("\n".join((str(x) for x in sample(m, n))))
