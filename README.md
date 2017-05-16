@@ -21,7 +21,7 @@ Discreate Data and its Structures
 - Binary Search Tree (bst.py) [1]
 - Small World (smallworld.py) [1]
 
-Computer Sciencific Models
+Deterministic Modeling and Language
 - Deterministic Finite Automaton (dfa.py) [1]
 
 Intractability
