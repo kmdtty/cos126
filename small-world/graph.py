@@ -19,6 +19,7 @@ G A C
 H A B
 """
 import sys
+import itertools
 from collections import defaultdict
 
 class Graph():
@@ -29,21 +30,21 @@ class Graph():
     """
     self.graph = defaultdict(set)
     for line in f:
-      for source, destinationin line.split(delimiter):
-        self.graph[source].add(destinationin)
-        slef.graph[destinationin].add(source)
+      source, destination = line.rstrip().split(delimiter)
+      self.graph[source].add(destination)
+      self.graph[destination].add(source)
 
   def add_edge(self, v, w):
     """add edge v-w"""
-     self.graph[v].add(w)
-     self.graph[w].add(v)
+    self.graph[v].add(w)
+    self.graph[w].add(v)
 
   def vertices(self):
     return self.graph.keys()
 
-  def edges(self):
+  def edges(self, v):
     # TODO:optimize
-    edges = set(k)
+    edges = set()
     for v, neighbors in self.graph.items():
       edges = edges.union(itertools.product(v, neighbors))
     return edges
@@ -64,4 +65,7 @@ class Graph():
     return (v,w) in self.edges()
 
 if __name__ == "__main__":
-  pass
+  graph = Graph(f=sys.stdin)
+  v_n = [(v, graph.neighbors(v)) for v in graph.vertices()]
+  for v, n in v_n:
+    print("%s %s" % (v, " ".join(n)))
