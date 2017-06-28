@@ -5,27 +5,41 @@ Give examples for computer science ideas in Python.
 Computer Sceince Ideas and Programs:
 ------------------------------------
 
-The Origins of Computation
-- Square Root (sqrt.py) [1]
+1. Set
 
-The Cost and Improvement
-- 3 sum (three_sum.py) [1]
+2. Relation
 
-Science by Probabilistic Modeling and Computation
-- Gambler's Ruin (gambler.py) [1]
-- Pagerank (pagerank.py) [1][2]
-- Sampling Sequence (sampling.py) [1]
-- Coupon Collector (coupon.py) [1]
+3. Function
 
-Discreate Data and its Structures
-- Binary Search Tree (bst.py) [1]
-- Small World (smallworld.py) [1]
+5. Vector Space
 
-Deterministic Modeling and Language
-- Deterministic Finite Automaton (dfa.py) [1]
+6. Basis
 
-Intractability
-- sat-solver (sat.py) [1]
+7. Eigenvector
+ - Pagerank (pagerank.py) [1][2]
+
+9. Syntax
+
+10. Semantics
+
+11. Automaton
+
+ - Deterministic Finite Automaton (dfa.py) [1]
+
+97. Tree (Recursion, Counting)
+ - 3 sum (three_sum.py) [1]
+ - sat-solver (sat.py) [1]
+ - Square Root (sqrt.py) [1]
+ - Binary Search Tree (bst.py) [1]
+
+98. Graph
+ - Small World (smallworld.py) [1]
+
+99. Probability
+
+ - Gambler's Ruin (gambler.py) [1]
+ - Sampling Sequence (sampling.py) [1]
+ - Coupon Collector (coupon.py) [1]
 
 References:
 -----------
